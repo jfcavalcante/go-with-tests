@@ -13,6 +13,9 @@ func TestAdder(t *testing.T) {
 		t.Errorf("expected '%d' but got '%d'", expected, sum)
 	}
 }
+
+// Examples are compiled as part of package's test suite
+// The output comment is needed
 func ExampleAdder() {
 	sum := Add(1, 5)
 	fmt.Println(sum)

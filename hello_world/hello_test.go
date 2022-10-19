@@ -48,14 +48,17 @@ func TestHello(t *testing.T) {
 	})
 	t.Run("in Portuguese", func(t *testing.T) {
 		got := Hello("Jhon", "Portuguese")
-		want := "Olá, Jon"
+		want := "Olá, Jhn"
 		assertCorrectMessage(t, got, want)
 	})
 }
 
 func assertCorrectMessage(t testing.TB, got, want string) {
+	// the line number reported will be in our function call
+	// not inside our test helper
 	t.Helper()
 	if got != want {
+		// without the t.Helper() the line reported would be 62
 		t.Errorf("got %q, want %q", got, want)
 	}
 }
